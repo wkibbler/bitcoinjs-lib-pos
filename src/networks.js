@@ -46,6 +46,17 @@ module.exports = {
     wif: 0x9e,
     dustThreshold: 0 // https://github.com/dogecoin/dogecoin/blob/v1.7.1/src/core.h#L155-L160
   },
+  peercoin: {
+    messagePrefix: '\x17PPcoin Signed Message:\n',
+    bip32: {
+      public: 0x01da950b,  // start with "Ppub..."
+      private: 0x01da90d0  // start with "Pprv..."
+    },
+    pubKeyHash: 0x37,
+    scriptHash: 0x75,
+    wif: 0xb7,
+    dustThreshold: 0
+  },
   dash: {
     messagePrefix: '\x19DarkCoin Signed Message:\n', // https://github.com/dashpay/dash/blob/master/src/main.cpp#L90
     bip32: {
