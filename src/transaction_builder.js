@@ -11,6 +11,7 @@ var types = require('./types')
 var ECPair = require('./ecpair')
 var ECSignature = require('./ecsignature')
 var Transaction = require('./transaction')
+var networks = require('./networks')
 
 // re-orders signatures to match pubKeys, fills undefined otherwise
 function fixMSSignatures (transaction, vin, pubKeys, signatures, prevOutScript, hashType, skipPubKey) {
@@ -141,13 +142,14 @@ function extractInput (transaction, txIn, vin) {
 }
 
 function TransactionBuilder (network) {
+  this.network = network || networks.bitcoin
   this.prevTxMap = {}
   this.prevOutScripts = {}
   this.prevOutTypes = {}
   this.network = network || networks.bitcoin
 
   this.inputs = []
-  this.tx = new Transaction()
+  this.tx = new Transaction(network)
 }
 
 TransactionBuilder.prototype.setLockTime = function (locktime) {
@@ -165,11 +167,12 @@ TransactionBuilder.prototype.setLockTime = function (locktime) {
   this.tx.locktime = locktime
 }
 
-TransactionBuilder.fromTransaction = function (transaction, network) {
-  var txb = new TransactionBuilder(network)
+TransactionBuilder.fromTransaction = function (transaction) {
+  var txb = new TransactionBuilder(transaction.network)
 
   // Copy other transaction fields
   txb.tx.version = transaction.version
+  txb.tx.time = transaction.time
   txb.tx.locktime = transaction.locktime
 
   // Extract/add inputs

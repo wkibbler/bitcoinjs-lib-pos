@@ -5,9 +5,12 @@ var bufferReverse = require('buffer-reverse')
 var opcodes = require('./opcodes')
 var typeforce = require('typeforce')
 var types = require('./types')
+var networks = require('./networks')
 
-function Transaction () {
+function Transaction (network) {
+  this.network = network || networks.bitcoin;
   this.version = 1
+  this.time = Math.floor(new Date().getTime() / 1000);
   this.locktime = 0
   this.ins = []
   this.outs = []
@@ -19,7 +22,8 @@ Transaction.SIGHASH_NONE = 0x02
 Transaction.SIGHASH_SINGLE = 0x03
 Transaction.SIGHASH_ANYONECANPAY = 0x80
 
-Transaction.fromBuffer = function (buffer, __noStrict) {
+Transaction.fromBuffer = function (buffer, __noStrict, network) {
+  network = network || networks.bitcoin;
   var offset = 0
   function readSlice (n) {
     offset += n
@@ -48,8 +52,9 @@ Transaction.fromBuffer = function (buffer, __noStrict) {
     return readSlice(readVarInt())
   }
 
-  var tx = new Transaction()
+  var tx = new Transaction(network)
   tx.version = readUInt32()
+  if (network.isPoS) tx.time = readUInt32();
 
   var vinLen = readVarInt()
   for (var i = 0; i < vinLen; ++i) {
@@ -77,8 +82,8 @@ Transaction.fromBuffer = function (buffer, __noStrict) {
   return tx
 }
 
-Transaction.fromHex = function (hex) {
-  return Transaction.fromBuffer(new Buffer(hex, 'hex'))
+Transaction.fromHex = function (hex, network) {
+  return Transaction.fromBuffer(new Buffer(hex, 'hex'), null, network)
 }
 
 Transaction.isCoinbaseHash = function (buffer) {
@@ -128,7 +133,7 @@ Transaction.prototype.byteLength = function () {
   }
 
   return (
-    8 +
+    (this.network.isPoS ? 12 : 8) +
     bufferutils.varIntSize(this.ins.length) +
     bufferutils.varIntSize(this.outs.length) +
     this.ins.reduce(function (sum, input) { return sum + 40 + scriptSize(input.script) }, 0) +
@@ -137,8 +142,9 @@ Transaction.prototype.byteLength = function () {
 }
 
 Transaction.prototype.clone = function () {
-  var newTx = new Transaction()
+  var newTx = new Transaction(this.network)
   newTx.version = this.version
+  newTx.time = this.time
   newTx.locktime = this.locktime
 
   newTx.ins = this.ins.map(function (txIn) {
@@ -276,6 +282,7 @@ Transaction.prototype.toBuffer = function () {
   }
 
   writeUInt32(this.version)
+  if (this.network.isPoS) writeUInt32(this.time)
   writeVarInt(this.ins.length)
 
   this.ins.forEach(function (txIn) {

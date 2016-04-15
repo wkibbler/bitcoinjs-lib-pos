@@ -11,7 +11,8 @@ module.exports = {
     pubKeyHash: 0x00,
     scriptHash: 0x05,
     wif: 0x80,
-    dustThreshold: 546 // https://github.com/bitcoin/bitcoin/blob/v0.9.2/src/core.h#L151-L162
+    dustThreshold: 546, // https://github.com/bitcoin/bitcoin/blob/v0.9.2/src/core.h#L151-L162
+    isPoS: false
   },
   testnet: {
     messagePrefix: '\x18Bitcoin Signed Message:\n',
@@ -22,7 +23,8 @@ module.exports = {
     pubKeyHash: 0x6f,
     scriptHash: 0xc4,
     wif: 0xef,
-    dustThreshold: 546
+    dustThreshold: 546,
+    isPoS: false
   },
   litecoin: {
     messagePrefix: '\x19Litecoin Signed Message:\n',
@@ -33,7 +35,8 @@ module.exports = {
     pubKeyHash: 0x30,
     scriptHash: 0x05,
     wif: 0xb0,
-    dustThreshold: 0 // https://github.com/litecoin-project/litecoin/blob/v0.8.7.2/src/main.cpp#L360-L365
+    dustThreshold: 0, // https://github.com/litecoin-project/litecoin/blob/v0.8.7.2/src/main.cpp#L360-L365
+    isPoS: false
   },
   dogecoin: {
     messagePrefix: '\x19Dogecoin Signed Message:\n',
@@ -44,7 +47,8 @@ module.exports = {
     pubKeyHash: 0x1e,
     scriptHash: 0x16,
     wif: 0x9e,
-    dustThreshold: 0 // https://github.com/dogecoin/dogecoin/blob/v1.7.1/src/core.h#L155-L160
+    dustThreshold: 0, // https://github.com/dogecoin/dogecoin/blob/v1.7.1/src/core.h#L155-L160
+    isPoS: false
   },
   peercoin: {
     messagePrefix: '\x17PPcoin Signed Message:\n',
@@ -55,7 +59,8 @@ module.exports = {
     pubKeyHash: 0x37,
     scriptHash: 0x75,
     wif: 0xb7,
-    dustThreshold: 0
+    dustThreshold: 0,
+    isPoS: true
   },
   dash: {
     messagePrefix: '\x19DarkCoin Signed Message:\n', // https://github.com/dashpay/dash/blob/master/src/main.cpp#L90
@@ -66,7 +71,8 @@ module.exports = {
     pubKeyHash: 0x4c, // https://github.com/dashpay/dash/blob/master/src/chainparams.cpp#L169
     scriptHash: 0x10, // https://github.com/dashpay/dash/blob/master/src/chainparams.cpp#L170
     wif: 0xcc, // https://github.com/dashpay/dash/blob/master/src/chainparams.cpp#L171
-    dustThreshold: 5460 // https://github.com/dashpay/dash/blob/v0.12.0.x/src/primitives/transaction.h#L144-L155
+    dustThreshold: 5460, // https://github.com/dashpay/dash/blob/v0.12.0.x/src/primitives/transaction.h#L144-L155
+    isPoS: false
   },
   sib: {
     messagePrefix: '\x18SibCoin Signed Message:\n', // https://github.com/ivansib/sibcoin/blob/master/src/main.cpp#L91
@@ -77,7 +83,8 @@ module.exports = {
     pubKeyHash: 0x3f, // https://github.com/ivansib/sibcoin/blob/master/src/chainparams.cpp#L172
     scriptHash: 0x28, // https://github.com/ivansib/sibcoin/blob/master/src/chainparams.cpp#L173
     wif: 0x80, // https://github.com/ivansib/sibcoin/blob/master/src/chainparams.cpp#L174
-    dustThreshold: 5460 // https://github.com/ivansib/sibcoin/blob/master/src/primitives/transaction.h#L144-L155
+    dustThreshold: 5460, // https://github.com/ivansib/sibcoin/blob/master/src/primitives/transaction.h#L144-L155
+    isPoS: false
   }
   
 }
