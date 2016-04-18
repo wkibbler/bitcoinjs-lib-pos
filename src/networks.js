@@ -51,7 +51,7 @@ module.exports = {
     isPoS: false
   },
   peercoin: {
-    messagePrefix: '\x17PPcoin Signed Message:\n',
+    messagePrefix: '\x17PPCoin Signed Message:\n',
     bip32: {
       public: 0x01da950b,  // start with "Ppub..."
       private: 0x01da90d0  // start with "Pprv..."
