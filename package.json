@@ -1,10 +1,11 @@
 {
-  "name": "bitcoinjs-lib",
-  "version": "2.2.0",
-  "description": "Client-side Bitcoin JavaScript library",
+  "name": "multicoinjs-lib",
+  "version": "1.0.0",
+  "description": "Client-side Bitcoin and itforks JavaScript library",
   "main": "./src/index.js",
   "keywords": [
     "bitcoin",
+    "peercoin",
     "browser",
     "client",
     "library"
@@ -29,20 +30,16 @@
       "name": "Stefan Thomas",
       "email": "justmoon@members.fsf.org",
       "url": "http://www.justmoon.net"
+    },
+    {
+      "name": "Ivan Ivanov",
+      "email": "ivanivanovkzv@gmail.com",
+      "url": "http://3s3s.org"
     }
   ],
-  "scripts": {
-    "coverage": "mocha --require blanket -R travis-cov",
-    "coverage-local": "mocha --require blanket -R html-cov",
-    "integration": "mocha test/integration/",
-    "prepublish": "npm run test",
-    "standard": "standard",
-    "test": "npm run standard && npm run unit",
-    "unit": "mocha"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitcoinjs/bitcoinjs-lib.git"
+    "url": "https://github.com/3s3s/bitcoinjs-lib"
   },
   "files": [
     "src"

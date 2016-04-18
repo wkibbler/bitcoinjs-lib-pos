@@ -167,6 +167,12 @@ TransactionBuilder.prototype.setLockTime = function (locktime) {
   this.tx.locktime = locktime
 }
 
+TransactionBuilder.prototype.setTxTime = function (txtime) {
+  typeforce(types.UInt32, txtime)
+
+  this.tx.time = txtime
+}
+
 TransactionBuilder.fromTransaction = function (transaction) {
   var txb = new TransactionBuilder(transaction.network)
 
