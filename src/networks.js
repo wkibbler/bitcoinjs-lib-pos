@@ -62,6 +62,18 @@ module.exports = {
     dustThreshold: 0,
     isPoS: true
   },
+  novacoin: {
+    messagePrefix: '\x19NovaCoin Signed Message:\n',
+    bip32: {
+      public: 0x01da950b,  // TODO (start with "Ppub...)"
+      private: 0x01da90d0  // TODO (start with "Pprv...)"
+    },
+    pubKeyHash: 0x08,
+    scriptHash: 0x14,
+    wif: 0x88,
+    dustThreshold: 0,
+    isPoS: true
+  },
   dash: {
     messagePrefix: '\x19DarkCoin Signed Message:\n', // https://github.com/dashpay/dash/blob/master/src/main.cpp#L90
     bip32: {

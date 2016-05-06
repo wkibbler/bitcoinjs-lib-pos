@@ -1,6 +1,6 @@
 {
   "name": "multicoinjs-lib",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Client-side Bitcoin and itforks JavaScript library",
   "main": "./src/index.js",
   "keywords": [
@@ -39,7 +39,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/3s3s/bitcoinjs-lib"
+    "url": "git+https://github.com/3s3s/bitcoinjs-lib.git"
   },
   "files": [
     "src"
@@ -85,5 +85,37 @@
     "standard": "^5.0.0",
     "travis-cov": "^0.2.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "a9838de44dbb002ceb2b5e435fd209b0f7b28e61",
+  "bugs": {
+    "url": "https://github.com/3s3s/bitcoinjs-lib/issues"
+  },
+  "homepage": "https://github.com/3s3s/bitcoinjs-lib#readme",
+  "_id": "multicoinjs-lib@1.0.2",
+  "scripts": {},
+  "_shasum": "8998ca0333045716a9af9a67c9b21de3a0be8c1c",
+  "_from": "multicoinjs-lib@latest",
+  "_npmVersion": "2.14.20",
+  "_nodeVersion": "4.4.0",
+  "_npmUser": {
+    "name": "kzv",
+    "email": "ivanivanovkzv@gmail.com"
+  },
+  "dist": {
+    "shasum": "8998ca0333045716a9af9a67c9b21de3a0be8c1c",
+    "tarball": "https://registry.npmjs.org/multicoinjs-lib/-/multicoinjs-lib-1.0.2.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "kzv",
+      "email": "ivanivanovkzv@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/multicoinjs-lib-1.0.2.tgz_1461010555981_0.6227473120670766"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/multicoinjs-lib/-/multicoinjs-lib-1.0.2.tgz",
+  "readme": "ERROR: No README data found!"
 }
