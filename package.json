@@ -1,6 +1,6 @@
 {
   "name": "multicoinjs-lib",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Client-side Bitcoin and itforks JavaScript library",
   "main": "./src/index.js",
   "keywords": [
