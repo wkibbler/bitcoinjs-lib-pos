@@ -110,6 +110,54 @@ module.exports = {
     dustThreshold: 546, 
     isPoS: false
   },
+  cby: {
+    messagePrefix: '\x14Y51 Signed Message:\n',
+    bip32: {
+      public: 0x04088B21E, 
+      private: 0x0488ade4 
+    },
+    pubKeyHash: 78, 
+    scriptHash: 11, 
+    wif: 134, 
+    dustThreshold: 546, 
+    isPoS: false
+  },
+  cbr: {
+    messagePrefix: '\x14R51 Signed Message:\n',
+    bip32: {
+      public: 0x04088B21E, 
+      private: 0x0488ade4 
+    },
+    pubKeyHash: 60, 
+    scriptHash: 7, 
+    wif: 130, 
+    dustThreshold: 546, 
+    isPoS: false
+  },
+  cbd: {
+    messagePrefix: '\x14D51 Signed Message:\n',
+    bip32: {
+      public: 0x04088B21E, 
+      private: 0x0488ade4 
+    },
+    pubKeyHash: 30, 
+    scriptHash: 13, 
+    wif: 136, 
+    dustThreshold: 546, 
+    isPoS: false
+  },
+  cbmt: {
+    messagePrefix: '\x15CBMT Signed Message:\n',
+    bip32: {
+      public: 0x04088B21E, 
+      private: 0x0488ade4 
+    },
+    pubKeyHash: 63, 
+    scriptHash: 6, 
+    wif: 129, 
+    dustThreshold: 546, 
+    isPoS: false
+  },
   smailcoin: {
     messagePrefix: '\x1ASmailCoin Signed Message:\n',
     bip32: {
