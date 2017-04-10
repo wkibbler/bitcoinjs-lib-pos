@@ -147,14 +147,14 @@ module.exports = {
     isPoS: false
   },
   cbmt: {
-    messagePrefix: '\x15CBMT Signed Message:\n',
+    messagePrefix: '\x18CBToken Signed Message:\n',
     bip32: {
       public: 0x04088B21E, 
       private: 0x0488ade4 
     },
-    pubKeyHash: 63, 
-    scriptHash: 6, 
-    wif: 129, 
+    pubKeyHash: 65, 
+    scriptHash: 16, 
+    wif: 139, 
     dustThreshold: 546, 
     isPoS: false
   },
