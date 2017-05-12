@@ -169,7 +169,19 @@ module.exports = {
     wif: 0x81, 
     dustThreshold: 546, 
     isPoS: false
-  }
+  },
+  natcoin: {
+    messagePrefix: '\x18NatCoin Signed Message:\n',
+    bip32: {
+      public: 0x019da462,
+      private: 0x019d9cfe
+    },
+    pubKeyHash: 52,
+    scriptHash: 0x05,
+    wif: 0xb4,
+    dustThreshold: 0, // https://github.com/litecoin-project/litecoin/blob/v0.8.7.2/src/main.cpp#L360-L365
+    isPoS: false
+  },
   
   
 }
