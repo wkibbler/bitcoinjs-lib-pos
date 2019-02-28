@@ -1,5 +1,5 @@
 {
-  "name": "multicoinjs-lib",
+  "name": "bitcoinjs-pos",
   "version": "1.0.9",
   "description": "Client-side Bitcoin and itforks JavaScript library",
   "main": "./src/index.js",
